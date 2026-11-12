@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "AgentArts 记忆库",
+    "description": "把华为云 AgentArts（智果）记忆库里的长期记忆接进 DSH：提供 agentarts_memory 工具做语义检索和分页浏览，只读，不会写入或删除记忆。"
+  }
+}

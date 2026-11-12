@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "AgentArts Memory",
+    "description": "Brings long-term memory from Huawei Cloud AgentArts (智果) into DSH: the agentarts_memory tool does semantic retrieval and paged browsing, read-only — it never writes or deletes a memory."
+  }
+}

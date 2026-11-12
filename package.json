@@ -1,0 +1,67 @@
+{
+  "name": "@local/dsh-agentarts-memory",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "华为云 AgentArts 记忆库：把 Space 里的长期记忆接进 DSH，提供 agentarts_memory 工具（列记忆 + 语义检索），API Key 与 Space ID 在插件设置页填写。",
+  "icon": "icon.svg",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.1-rc.3 <0.3.0-0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "huawei",
+    "agentarts",
+    "memory"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": ">=3.18.2 <4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ElioFanyu/dsh-agentarts-memory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ElioFanyu/dsh-agentarts-memory/issues"
+  },
+  "homepage": "https://github.com/ElioFanyu/dsh-agentarts-memory#readme",
+  "author": "ElioFanyu"
+}

@@ -1,0 +1,30 @@
+# Huawei Cloud AgentArts memory
+#
+# One row, no configuration required to install. Fill these in from the plugin's
+# own settings page (设置 → 插件 → AgentArts 记忆库) rather than by hand:
+#
+#   spaceId  控制台记忆库详情页 URL 里的 id 参数
+#   apiKey   记忆库详情页「API Key」处复制或下载的值
+#
+# The schema in lib/config.js is the source of truth for names and defaults;
+# this row only restates what a fresh install should start from.
+- insert:
+    - id: dsh-agentarts-memory
+      name: '@local/dsh-agentarts-memory'
+      config:
+        # '' = 未配置。这些值留给使用者自己填，插件不预置任何人的 Space。
+        # 在「设置 → AgentArts 记忆库」里填，或直接改这里。
+        spaceId: ''
+        region: cn-southwest-2
+        # '' = derive from region.
+        baseUrl: ''
+        # '' = use the space's default actor; set it when the writing side used one.
+        actorId: ''
+        # Credential reference consulted before `apiKey`.
+        apiKeyRef: AGENTARTS_MEMORY_API_KEY
+        # Prefer apiKeyRef; a key here is stored in this file in clear text.
+        apiKey: ''
+        topK: 5
+        minScore: 0
+        rerank: false
+        onlyActive: true
